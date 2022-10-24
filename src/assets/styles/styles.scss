@@ -12,6 +12,16 @@ body {
   font-family: "Lora", serif;
 }
 
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .pointer {
   cursor: pointer;
 }

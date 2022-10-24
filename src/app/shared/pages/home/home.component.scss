@@ -1,0 +1,41 @@
+@use "vars" as *;
+
+.home-container {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  grid-template-rows: auto 1fr;
+  text-align: center;
+  .curso-home {
+    grid-column: 1;
+
+    .contenido-curso {
+      color: $light;
+
+      border-color: $lightgrey;
+      background: url("../../../../assets/images/logos/redux-rxjs-ngrx.png");
+      background-size: contain;
+      overflow: hidden;
+
+      //? hack para que salte encima el contenido del fondo
+      opacity: 0.99;
+
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: $blackgrey;
+        opacity: 0.8;
+      }
+      .img-ngrx {
+        border-radius: 15px;
+        width: 40%;
+      }
+    }
+  }
+}
