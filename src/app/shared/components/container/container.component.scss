@@ -8,18 +8,31 @@
   grid-template-rows: 60px 1fr;
   background-color: $darkgrey;
   color: $light;
-  position: relative;
   .navbar {
     grid-column: 2 / span 3;
     grid-row: 1;
+    z-index: 2;
   }
   .sidebar {
-    grid-column: 1;
+    grid-column: span 2 /3;
     grid-row: 1 / span 2;
+    transform: translateX(-420px);
+    transition: transform 0.2s linear, border 0.2s linear,
+      background 0.2s linear;
+    border-right: 0px solid $lightgrey;
+
+    background-color: inherit;
+    will-change: transform;
+    z-index: 2;
+
     &.expanded {
-      grid-column: span 2/3;
-      z-index: 2;
-      position: absolute;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+        rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      transform: translateX(0);
+      background-color: $blackgrey;
+      border-right: 1px solid $lightgrey;
     }
   }
   .container {
@@ -29,10 +42,7 @@
     border-radius: 20px 0 0 0;
     padding: 30px;
     color: $darkgrey;
-
     scrollbar-gutter: stable;
-    -webkit-transition: background-color 1s linear;
-    transition: background-color 1s linear;
 
     &:hover,
     &:active {
@@ -46,12 +56,10 @@
       }
     }
     &::-webkit-scrollbar {
-      transition: background-color 3000ms;
-      background: $purplegrey;
       width: 12px;
       box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
       &-thumb {
-        background: $darkgrey;
+        background: $blackgrey;
         border-radius: 4px;
         box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
       }

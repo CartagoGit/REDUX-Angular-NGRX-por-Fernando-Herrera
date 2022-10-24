@@ -25,9 +25,6 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/assets/images/icons/favicon.ico", "src/assets"],
             "styles": ["src/assets/styles/styles.scss"],
-            "stylePreprocessorOptions": {
-              "includePaths": ["src/assets/styles"]
-            },
             "scripts": []
           },
           "configurations": {

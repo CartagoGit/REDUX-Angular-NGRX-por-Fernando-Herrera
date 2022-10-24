@@ -1,0 +1,21 @@
+$blackgrey: #202020;
+$darkgrey: #40453f;
+$lightgrey: #bebdbc;
+$light: #f7f7f7;
+$purple: #653cf0;
+$purplegrey: #513192;
+$purpleblue: #406bf7;
+$lightblue: #40f7dd;
+$lightgreen: #3eed7e;
+$blue-primary: #45aee0;
+
+$background-gradient-grey: linear-gradient(
+  215deg,
+  $blackgrey 0%,
+  $darkgrey 100%
+);
+$background-gradient-dark: linear-gradient(
+  215deg,
+  black 100%,
+  $blackgrey 1000%
+);

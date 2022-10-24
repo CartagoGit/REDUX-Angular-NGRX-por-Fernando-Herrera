@@ -1,1 +1,16 @@
+:host {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: auto 60px;
+  .icons-section {
+    margin-left: auto;
+    grid-column: 2;
 
+    .icon {
+      transition: transform ease 500ms;
+      &.expanded-icon{
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

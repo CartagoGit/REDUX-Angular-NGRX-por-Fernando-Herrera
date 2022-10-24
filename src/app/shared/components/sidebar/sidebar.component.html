@@ -1,1 +1,9 @@
-<button type="button" class="pointer" (click)="expandSidebar()">H</button>
+<section class="icons-section">
+  <button
+    type="button"
+    class="pointer expand-button button-icon"
+    (click)="expandSidebar()"
+  >
+    <i class="fa-solid fa-arrow-right icon" [ngClass]="isExpanded ? 'expanded-icon' : '' "></i>
+  </button>
+</section>

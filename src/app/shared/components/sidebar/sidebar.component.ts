@@ -8,12 +8,12 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
   // public isExpanded: boolean = false;
   @HostBinding('class.expanded') isExpanded: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
 
   public expandSidebar(): void {
-    console.log(1);
     this.isExpanded = !this.isExpanded;
   }
 }

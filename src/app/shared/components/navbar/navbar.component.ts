@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+  public title: string = 'Redux en Angular - NGRX - Por Fernando Herrera'
   constructor() { }
 
   ngOnInit(): void {
