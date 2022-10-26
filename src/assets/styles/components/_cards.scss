@@ -4,4 +4,17 @@
   background-color: $light;
   padding: 15px;
   margin: 10px;
+  transition: border 500ms ease;
+
+  &.card-hover:hover {
+    border: 2px solid $lightgreen;
+    cursor: pointer;
+    .card-child-hover {
+      border: 2px solid $lightgreen !important;
+    }
+  }
+  &.card-child-hover {
+    transition: border 500ms ease;
+    background-color: red;
+  }
 }

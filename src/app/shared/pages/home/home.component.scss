@@ -7,6 +7,8 @@
   text-align: center;
   .curso-home {
     grid-column: 1;
+    grid-row: 1;
+    transition: border ease 500ms;
 
     .contenido-curso {
       color: $light;
@@ -36,6 +38,19 @@
         border-radius: 15px;
         width: 40%;
       }
+    }
+  }
+  .projects {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .contacto-home {
+    grid-column: span 2/3;
+    grid-row: 2;
+
+    .links {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
