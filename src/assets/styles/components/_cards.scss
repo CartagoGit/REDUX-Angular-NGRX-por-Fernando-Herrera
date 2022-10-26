@@ -7,10 +7,10 @@
   transition: border 500ms ease;
 
   &.card-hover:hover {
-    border: 2px solid $lightgreen;
+    border: 2px solid $lightblue;
     cursor: pointer;
     .card-child-hover {
-      border: 2px solid $lightgreen !important;
+      border: 2px solid $lightblue !important;
     }
   }
   &.card-child-hover {
