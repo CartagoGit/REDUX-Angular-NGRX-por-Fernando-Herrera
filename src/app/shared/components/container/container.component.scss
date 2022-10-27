@@ -4,7 +4,7 @@
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 60px 420px 1fr;
+  grid-template-columns: 60px 480px 1fr;
   grid-template-rows: 60px 1fr;
   background-color: $blackgrey;
   color: $light;
@@ -16,7 +16,7 @@
   .sidebar {
     grid-column: span 2 /3;
     grid-row: 1 / span 2;
-    transform: translateX(-420px);
+    transform: translateX(-480px);
     transition: transform 0.2s linear, border 0.2s linear,
       background 0.2s linear;
     border-right: 0px solid $lightgrey;

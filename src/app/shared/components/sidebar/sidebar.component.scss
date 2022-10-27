@@ -2,6 +2,13 @@
   padding: 5px;
   display: grid;
   grid-template-columns: auto 60px;
+  text-align: center;
+
+  .routes-section{
+    grid-column: 1;
+    padding: 20px;
+  }
+
   .icons-section {
     margin-left: auto;
     grid-column: 2;
