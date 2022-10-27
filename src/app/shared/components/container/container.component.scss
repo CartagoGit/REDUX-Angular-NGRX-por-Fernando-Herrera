@@ -36,7 +36,7 @@
     }
   }
   .container {
-    background: linear-gradient(215deg, $purplegrey 0%, $blue-primary 100%);
+    background: $background-primary;
     grid-column: 2 / span 3;
     grid-row: 2;
     border-radius: 20px 0 0 0;
@@ -44,29 +44,30 @@
     padding-top: 50px;
     color: $darkgrey;
     scrollbar-gutter: stable;
-
-    &:hover,
-    &:active {
+    &::ng-deep {
+      &:hover,
+      &:active {
+        &::-webkit-scrollbar {
+          &-thumb {
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+          }
+          &-track {
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
       &::-webkit-scrollbar {
+        width: 12px;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
         &-thumb {
+          background: $blackgrey;
+          border-radius: 4px;
           box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
         }
         &-track {
+          background: $lightgrey;
           box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
         }
-      }
-    }
-    &::-webkit-scrollbar {
-      width: 12px;
-      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
-      &-thumb {
-        background: $blackgrey;
-        border-radius: 4px;
-        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
-      }
-      &-track {
-        background: $lightgrey;
-        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
       }
     }
     &:last-child::ng-deep {

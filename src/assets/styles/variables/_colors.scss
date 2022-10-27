@@ -19,3 +19,15 @@ $background-gradient-dark: linear-gradient(
   black 100%,
   $blackgrey 1000%
 );
+
+$background-primary: linear-gradient(
+  215deg,
+  $purplegrey 0%,
+  $blue-primary 100%
+);
+
+$background-primary-inverse: linear-gradient(
+  215deg,
+  $blue-primary 0%,
+  $purplegrey 100%
+);
