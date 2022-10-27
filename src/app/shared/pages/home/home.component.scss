@@ -6,10 +6,12 @@
   grid-template-rows: auto auto;
   text-align: center;
   height: 100%;
+  overflow: auto;
   .curso-home {
     grid-column: 1;
     grid-row: 1;
-    transition: border ease 500ms;
+    display: grid;
+    grid-template-rows: 44px 44px auto;
 
     .contenido-curso {
       color: $light;
@@ -46,40 +48,9 @@
     grid-row: 1;
     overflow: hidden;
     display: grid;
-    grid-template-rows: 1fr 1fr auto;
+    grid-template-rows: 44px 44px 1fr;
 
-    .hide-scroll-projects {
-      overflow: hidden;
-      border: 2px solid $lightgrey;
-      background: $background-primary-inverse;
-      padding: 0;
-      .projects {
-        display: flex;
-        height: 100%;
-        // width: auto;
-        flex-direction: column;
-        overflow: auto;
-
-        .project {
-          background-color: $blackgrey;
-          color: $light;
-          transition: opacity 500ms ease;
-          display: flex;
-          justify-content: center;
-          min-width: 400px;
-          margin: auto;
-          margin-top: 3px;
-          margin-bottom: 4px;
-          &:hover {
-            opacity: 0.9;
-          }
-          > span:first-child {
-            margin: 0 2px;
-          }
-        }
-      }
-    }
-
+    
   }
   .contacto-home {
     grid-column: span 2/3;
