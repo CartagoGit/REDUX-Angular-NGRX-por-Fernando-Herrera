@@ -1,22 +1,54 @@
+@use "/src/assets/styles/vars" as *;
 :host {
-  padding: 5px;
   display: grid;
-  grid-template-columns: auto 60px;
   text-align: center;
+  overflow: hidden;
 
-  .routes-section{
-    grid-column: 1;
-    padding: 20px;
+  grid-template-rows: 60px auto;
+  grid-column: span 2 /3;
+  grid-row: 1 / span 2;
+  transform: translateX(-480px);
+  transition: transform 0.2s linear, border 0.2s linear, background 0.2s linear;
+  border-right: 0px solid $lightgrey;
+
+  background-color: inherit;
+  will-change: transform;
+  z-index: 2;
+
+  &.expanded {
+    background-color: $darkgrey;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+      rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+      rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    transform: translateX(0);
+    border-right: 1px solid $lightgrey;
   }
+  .sidebar {
+    grid-template-columns: auto 60px;
+    display: grid;
 
-  .icons-section {
-    margin-left: auto;
-    grid-column: 2;
-
-    .icon {
-      transition: transform ease 500ms;
-      &.expanded-icon{
-        transform: rotate(180deg);
+    .icons-section {
+      padding-top: 5px;
+      padding-right: 5px;
+      margin-left: auto;
+      grid-column: 2;
+      overflow-y: visible;
+      overflow-x: visible;
+      .icon {
+        transition: transform ease 500ms;
+        &.expanded-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &-top {
+    }
+    &-bot {
+      overflow-y: auto;
+      overflow-x: hidden;
+      .routes-section {
+        grid-column: 1;
+        padding: 20px;
       }
     }
   }

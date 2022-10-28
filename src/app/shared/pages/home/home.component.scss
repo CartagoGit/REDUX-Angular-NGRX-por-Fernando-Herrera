@@ -1,4 +1,4 @@
-@use "vars" as *;
+@use "/src/assets/styles/vars" as *;
 
 .home-container {
   display: grid;
@@ -50,7 +50,7 @@
     display: grid;
     grid-template-rows: 44px 44px 1fr;
 
-    
+
   }
   .contacto-home {
     grid-column: span 2/3;

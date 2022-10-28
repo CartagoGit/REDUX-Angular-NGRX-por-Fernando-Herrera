@@ -13,6 +13,7 @@ export class ListBadgedComponent implements OnInit {
   private _subcriptionProjects!: Subscription;
 
   constructor(private _storage: StorageService) {
+    //? Cargamos los proyectos que haya iniciales
     this.projects = this._storage.projects;
     this._initSubscriptionProject();
   }
@@ -23,6 +24,7 @@ export class ListBadgedComponent implements OnInit {
     this._subcriptionProjects.unsubscribe();
   }
 
+  //? Nos subscribimos a cualquier posible cambio que pueda haber en los proyectos disponibles
   private _initSubscriptionProject(): void {
     this._subcriptionProjects = this._storage.obsProjects.subscribe({
       next: (projects: Project[]) => {

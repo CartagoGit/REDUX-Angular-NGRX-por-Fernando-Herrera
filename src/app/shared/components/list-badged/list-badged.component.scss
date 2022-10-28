@@ -1,8 +1,7 @@
-@use "vars" as *;
+@use "/src/assets/styles/vars" as *;
 
 :host {
   overflow: hidden;
-  // border: 2px solid $lightgrey;
   background: $background-primary-inverse;
   text-align: center;
   padding: 0;

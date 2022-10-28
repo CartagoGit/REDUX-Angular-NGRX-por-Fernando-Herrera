@@ -6,8 +6,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  // public isExpanded: boolean = false;
-  @HostBinding('class.expanded') isExpanded: boolean = false;
+  @HostBinding('class.expanded') isExpanded: boolean = true;
 
   constructor() {}
 
