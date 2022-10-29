@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { Course, ExternalLinks } from '../interfaces/external-links';
 import { Project } from '../interfaces/projects.interface';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { Project } from '../interfaces/projects.interface';
 })
 export class StorageService {
   //$ Variables de PROJECTS
-  private _projects!: Project[];
+  private _projects: Project[] = [];
   set projects(value: Project[]) {
     this._projects = [...value];
     this._subjectProjects$.next([...this.projects]);
@@ -22,7 +23,7 @@ export class StorageService {
   public obsProjects: Observable<Project[]>;
 
   //? Proyectos iniciales
-  private _elementsProjects: Project[] = [
+  private _initProjects: Project[] = [
     {
       title: 'Redux',
       description: 'desde abosulto cero',
@@ -71,13 +72,48 @@ export class StorageService {
   ];
 
   //$ Variables estaticas
-  private _email: string = 'cv2mario@gmail.com';
-  get email(): string {
-    return this._email;
-  }
+  //? Curso actual de la Pagina
+  public actualCourse: Readonly<Course> = {
+    id: 1,
+    title: 'NGRX - REDUX en Angular ',
+    subtitle: 'Desde las bases hasta la práctica',
+    link: 'https://www.udemy.com/course/redux-ngrx-angular',
+    isComplete: function () {
+      return !!this.linkCertificatePdf;
+    },
+    description:
+      'Este curso esta enfocado en implementar correctamente el patrón REDUX en aplicaciones de Angular utilizando los paquetes que el ngrx nos ofrece ',
+    projects: this.projects,
+    author: {
+      id: 1,
+      name: 'Fernando Herrera',
+      linkPage: 'https://fernando-herrera.com/#/',
+      linkUdemy: 'https://www.udemy.com/user/550c38655ec11/',
+    },
+    techs: {
+      frontend: {
+        framework: 'Angular',
+        language: 'TypeScript',
+        tag: 'HTML',
+        style: 'Scss',
+      },
+    },
+  };
 
+  //? Todos los cursos realizados o guardados por hacer
+
+  //? Objeto con información de rutas externas
+  public links: Readonly<ExternalLinks> = {
+    email: 'cv2mario@gmail.com',
+    github: 'https://github.com/CartagoGit',
+    portafolios: '#',
+    linkedin: 'https://www.linkedin.com/in/mario-cabrero-volarich/',
+    certificatesGithub: 'https://github.com/CartagoGit/Certificados',
+  };
+
+  //$ Constructor
   constructor() {
-    this.projects = this._elementsProjects;
+    this.projects = this._initProjects;
     this.obsProjects = this._subjectProjects$.asObservable();
   }
 }

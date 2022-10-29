@@ -37,32 +37,32 @@
       certificados:
     </h2>
     <div class="links">
-      <a
-        class="card card-hover email"
-        href="mailito:cv2mario@gmail.com"
-        (click)="copyToClipboard(email)"
+      <!-- TODO mostrar mensaje de que el email se ha copiado al portapapeles -->
+      <a class="card card-hover email" (click)="copyToClipboard(links.email)"
         >Email</a
       >
 
-      <a
-        class="card card-hover github"
-        href="https://github.com/CartagoGit"
-        target="_blank"
+      <a class="card card-hover github" [href]="links.github" target="_blank"
         >Github</a
       >
 
-      <a class="card card-hover portafolios" href="#" target="_blank">Portafolios</a>
+      <a
+        class="card card-hover portafolios"
+        [href]="links.portafolios"
+        target="_blank"
+        >Portafolios</a
+      >
 
       <a
         class="card card-hover linkedin"
-        href="https://www.linkedin.com/in/mario-cabrero-volarich/"
+        [href]="links.linkedin"
         target="_blank"
         >LinkedIn
       </a>
 
       <a
         class="card card-hover certificates"
-        href="https://github.com/CartagoGit/Certificados"
+        [href]="links.certificatesGithub"
         target="_blank"
         >Certificados</a
       >

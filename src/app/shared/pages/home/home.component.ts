@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../../services/storage.service';
+import { ExternalLinks } from '../../interfaces/external-links';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,14 @@ import { StorageService } from '../../services/storage.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public email: string = 'cv2mario@gmail.com';
+
+
+  // ! Habrá que crear un componente exclusivo para mostrar la información del curso actual
+  public links : ExternalLinks;
 
   constructor(private _storageSvc: StorageService) {
-    this.email = this._storageSvc.email;
+    this.links = this._storageSvc.links;
+
   }
 
   ngOnInit(): void {}
