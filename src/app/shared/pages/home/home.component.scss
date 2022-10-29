@@ -15,6 +15,10 @@
 
     .contenido-curso {
       color: $light;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
 
       border-color: $lightgrey;
       background: url("../../../../assets/images/logos/redux-rxjs-ngrx.png");
@@ -49,8 +53,6 @@
     overflow: hidden;
     display: grid;
     grid-template-rows: 44px 44px 1fr;
-
-
   }
   .contacto-home {
     grid-column: span 2/3;
