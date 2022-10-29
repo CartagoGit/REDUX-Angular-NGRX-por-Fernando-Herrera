@@ -6,6 +6,7 @@ import { Project } from '../interfaces/projects.interface';
   providedIn: 'root',
 })
 export class StorageService {
+  //$ Variables de PROJECTS
   private _projects!: Project[];
   set projects(value: Project[]) {
     this._projects = [...value];
@@ -68,6 +69,12 @@ export class StorageService {
       description: 'Ngrx/effects',
     },
   ];
+
+  //$ Variables estaticas
+  private _email: string = 'cv2mario@gmail.com';
+  get email(): string {
+    return this._email;
+  }
 
   constructor() {
     this.projects = this._elementsProjects;

@@ -37,27 +37,35 @@
       certificados:
     </h2>
     <div class="links">
-      <div class="card card-hover">
-        <a href="https://github.com/CartagoGit" target="_blank">Email</a>
-      </div>
-      <div class="card card-hover">
-        <a href="https://github.com/CartagoGit" target="_blank">Github</a>
-      </div>
-      <div class="card card-hover">
-        <a href="#" target="_blank">Portafolios</a>
-      </div>
-      <div class="card card-hover">
-        <a
-          href="https://www.linkedin.com/in/mario-cabrero-volarich/"
-          target="_blank"
-          >LinkedIn</a
-        >
-      </div>
-      <div class="card card-hover">
-        <a href="https://github.com/CartagoGit/Certificados" target="_blank"
-          >Certificados</a
-        >
-      </div>
+      <a
+        class="card card-hover email"
+        href="mailito:cv2mario@gmail.com"
+        (click)="copyToClipboard(email)"
+        >Email</a
+      >
+
+      <a
+        class="card card-hover github"
+        href="https://github.com/CartagoGit"
+        target="_blank"
+        >Github</a
+      >
+
+      <a class="card card-hover portafolios" href="#" target="_blank">Portafolios</a>
+
+      <a
+        class="card card-hover linkedin"
+        href="https://www.linkedin.com/in/mario-cabrero-volarich/"
+        target="_blank"
+        >LinkedIn
+      </a>
+
+      <a
+        class="card card-hover certificates"
+        href="https://github.com/CartagoGit/Certificados"
+        target="_blank"
+        >Certificados</a
+      >
     </div>
   </div>
 </div>

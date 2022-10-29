@@ -6,8 +6,11 @@
   margin: 10px;
   transition: border 500ms ease;
   box-shadow: $shadow-secondary;
+  transition: opacity ease 300ms;
+
 
   &.card-hover:hover {
+    opacity: 0.95;
     border: 2px solid $lightblue;
     cursor: pointer;
     .card-child-hover {
@@ -25,7 +28,7 @@
   h5,
   h6 {
     margin: 0px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
