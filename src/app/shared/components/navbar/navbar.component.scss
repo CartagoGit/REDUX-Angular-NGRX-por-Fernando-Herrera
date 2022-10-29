@@ -9,7 +9,7 @@
     display: grid;
     height: 100%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 60px;
+    grid-template-rows: 80px;
     padding: 0 10px;
     font-weight: 600;
     h1 {
@@ -18,7 +18,7 @@
     .logo {
       overflow: visible;
       justify-self: center;
-      height: 300%;
+      height: 240%;
       display: flex;
       align-content: end;
       border-radius: 100%;

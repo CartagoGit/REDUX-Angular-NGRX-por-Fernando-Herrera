@@ -1,4 +1,6 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { Project } from '../../interfaces/projects.interface';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +10,11 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
   @HostBinding('class.expanded') isExpanded: boolean = true;
 
-  constructor() {}
+  public projects: Project[] = [];
+
+  constructor(private _storageService: StorageService) {
+    this.projects = this._storageService.projects;
+  }
 
   ngOnInit(): void {}
 

@@ -14,6 +14,11 @@ $background-gradient-grey: linear-gradient(
   $blackgrey 0%,
   $darkgrey 100%
 );
+$background-gradient-grey-invert: linear-gradient(
+  215deg,
+  $darkgrey 0%,
+  $blackgrey 100%
+);
 $background-gradient-dark: linear-gradient(
   215deg,
   black 100%,
@@ -32,8 +37,10 @@ $background-primary-inverse: linear-gradient(
   $purplegrey 100%
 );
 
-$background-grey-light: linear-gradient(
-  215deg,
-  $lightgrey 0%,
-  $light 100%
-);
+$background-grey-light: linear-gradient(215deg, $lightgrey 0%, $light 100%);
+
+$shadow-primary: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+  rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+$shadow-secondary: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+  rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
