@@ -1,29 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Course, ExternalLinks } from '../interfaces/external-links';
-import { Project } from '../interfaces/projects.interface';
+import { ICourse } from '../interfaces/course.interface';
+import { IExternalLinks } from '../interfaces/external-links';
+import { IProject } from '../interfaces/projects.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StorageService {
   //$ Variables de PROJECTS
-  private _projects: Project[] = [];
-  set projects(value: Project[]) {
+  private _projects: IProject[] = [];
+  set projects(value: IProject[]) {
     this._projects = [...value];
     this._subjectProjects$.next([...this.projects]);
   }
-  get projects(): Project[] {
+  get projects(): IProject[] {
     return [...this._projects];
   }
 
   //? Creamos un observable para recibir cada vez que los projectos cambien
-  private _subjectProjects$: Subject<Project[]> = new Subject<Project[]>();
+  private _subjectProjects$: Subject<IProject[]> = new Subject<IProject[]>();
 
-  public obsProjects: Observable<Project[]>;
+  public obsProjects: Observable<IProject[]>;
 
   //? Proyectos iniciales
-  private _initProjects: Project[] = [
+  private _initProjects: IProject[] = [
     {
       title: 'Redux',
       description: 'desde abosulto cero',
@@ -73,7 +74,7 @@ export class StorageService {
 
   //$ Variables estaticas
   //? Curso actual de la Pagina
-  public actualCourse: Readonly<Course> = {
+  public actualCourse: Readonly<ICourse> = {
     id: 1,
     title: 'NGRX - REDUX en Angular ',
     subtitle: 'Desde las bases hasta la práctica',
@@ -87,8 +88,10 @@ export class StorageService {
     author: {
       id: 1,
       name: 'Fernando Herrera',
-      linkPage: 'https://fernando-herrera.com/#/',
-      linkUdemy: 'https://www.udemy.com/user/550c38655ec11/',
+      links: {
+        personal: 'https://fernando-herrera.com/#/',
+        udemy: 'https://www.udemy.com/user/550c38655ec11/',
+      }
     },
     techs: {
       frontend: {
@@ -103,7 +106,7 @@ export class StorageService {
   //? Todos los cursos realizados o guardados por hacer
 
   //? Objeto con información de rutas externas
-  public links: Readonly<ExternalLinks> = {
+  public links: Readonly<IExternalLinks> = {
     email: 'cv2mario@gmail.com',
     github: 'https://github.com/CartagoGit',
     portafolios: '#',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../../services/storage.service';
-import { ExternalLinks } from '../../interfaces/external-links';
+import { IExternalLinks } from '../../interfaces/external-links';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
 
   // ! Habrá que crear un componente exclusivo para mostrar la información del curso actual
-  public links : ExternalLinks;
+  public links : IExternalLinks;
 
   constructor(private _storageSvc: StorageService) {
     this.links = this._storageSvc.links;

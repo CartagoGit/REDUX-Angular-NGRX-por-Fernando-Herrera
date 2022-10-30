@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Project } from '../../interfaces/projects.interface';
+import { IProject } from '../../interfaces/projects.interface';
 import { StorageService } from '../../services/storage.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { StorageService } from '../../services/storage.service';
   styleUrls: ['./list-badged.component.scss'],
 })
 export class ListBadgedComponent implements OnInit {
-  public projects: Project[] = [];
+  public projects: IProject[] = [];
   private _subcriptionProjects!: Subscription;
 
   constructor(private _storage: StorageService) {
@@ -27,7 +27,7 @@ export class ListBadgedComponent implements OnInit {
   //? Nos subscribimos a cualquier posible cambio que pueda haber en los proyectos disponibles
   private _initSubscriptionProject(): void {
     this._subcriptionProjects = this._storage.obsProjects.subscribe({
-      next: (projects: Project[]) => {
+      next: (projects: IProject[]) => {
         this.projects = [...projects];
       },
       error: (error) =>
