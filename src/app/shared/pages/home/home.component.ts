@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  //! notificar al usuario que se ha copiado el email al portapapeles
   public copyToClipboard(text: string) {
     navigator.clipboard.writeText(text);
   }

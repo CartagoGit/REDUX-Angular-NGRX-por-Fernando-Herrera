@@ -8,6 +8,7 @@ import { IProject } from '../interfaces/projects.interface';
   providedIn: 'root',
 })
 export class StorageService {
+
   //$ Variables de PROJECTS
   private _projects: IProject[] = [];
   set projects(value: IProject[]) {
@@ -24,84 +25,86 @@ export class StorageService {
   public obsProjects: Observable<IProject[]>;
 
   //? Proyectos iniciales
-  private _initProjects: IProject[] = [
-    {
-      title: 'Redux',
-      description: 'desde abosulto cero',
-    },
-    {
-      title: 'NGRX',
-      description: 'Redux con Angular',
-    },
-    {
-      title: 'To-Do App',
-      description: 'Aplicación con un estado más complejo',
-    },
-    {
-      title: 'Ingresos y reintegros App',
-      description: 'Éstilo y funcionalidades básicas',
-    },
-    {
-      title: 'Autenticación de aplicación',
-      description: 'Login y registro',
-    },
-    {
-      title: 'Redux en nuestra App',
-      description: 'Fin de la autenticación',
-    },
-    {
-      title: 'Módulo',
-      description: 'Ingresos y reintegros',
-    },
+  // private _initProjects: IProject[] = [
+  //   {
+  //     title: 'Redux',
+  //     description: 'desde abosulto cero',
+  //   },
+  //   {
+  //     title: 'NGRX',
+  //     description: 'Redux con Angular',
+  //   },
+  //   {
+  //     title: 'To-Do App',
+  //     description: 'Aplicación con un estado más complejo',
+  //   },
+  //   {
+  //     title: 'Ingresos y reintegros App',
+  //     description: 'Éstilo y funcionalidades básicas',
+  //   },
+  //   {
+  //     title: 'Autenticación de aplicación',
+  //     description: 'Login y registro',
+  //   },
+  //   {
+  //     title: 'Redux en nuestra App',
+  //     description: 'Fin de la autenticación',
+  //   },
+  //   {
+  //     title: 'Módulo',
+  //     description: 'Ingresos y reintegros',
+  //   },
 
-    {
-      title: 'NGRX',
-      description: 'Con LazyLoad',
-    },
-    {
-      title: 'Despliegue en Firebase',
-      description: 'Sección bonus',
-    },
-    {
-      title: 'Effects App',
-      description: 'Ngrx/effects',
-    },
-    {
-      title: 'Más efectos',
-      description: 'Ngrx/effects',
-    },
-  ];
+  //   {
+  //     title: 'NGRX',
+  //     description: 'Con LazyLoad',
+  //   },
+  //   {
+  //     title: 'Despliegue en Firebase',
+  //     description: 'Sección bonus',
+  //   },
+  //   {
+  //     title: 'Effects App',
+  //     description: 'Ngrx/effects',
+  //   },
+  //   {
+  //     title: 'Más efectos',
+  //     description: 'Ngrx/effects',
+  //   },
+  // ];
 
   //$ Variables estaticas
   //? Curso actual de la Pagina
-  public actualCourse: Readonly<ICourse> = {
-    id: 1,
-    title: 'NGRX - REDUX en Angular ',
-    subtitle: 'Desde las bases hasta la práctica',
-    link: 'https://www.udemy.com/course/redux-ngrx-angular',
-    isComplete: function () {
-      return !!this.linkCertificatePdf;
-    },
-    description:
-      'Este curso esta enfocado en implementar correctamente el patrón REDUX en aplicaciones de Angular utilizando los paquetes que el ngrx nos ofrece ',
-    projects: this.projects,
-    author: {
-      id: 1,
-      name: 'Fernando Herrera',
-      links: {
-        personal: 'https://fernando-herrera.com/#/',
-        udemy: 'https://www.udemy.com/user/550c38655ec11/',
-      }
-    },
-    techs: {
-      frontend: {
-        framework: 'Angular',
-        language: 'TypeScript',
-        tag: 'HTML',
-        style: 'Scss',
-      },
-    },
-  };
+  // public actualCourse: Readonly<ICourse> = {
+  //   _id: 1,
+  //   title: 'NGRX - REDUX en Angular ',
+  //   subtitle: 'Desde las bases hasta la práctica',
+  //   link: 'https://www.udemy.com/course/redux-ngrx-angular',
+  //   isComplete: function () {
+  //     return !!this.linkCertificatePdf;
+  //   },
+  //   description:
+  //     'Este curso esta enfocado en implementar correctamente el patrón REDUX en aplicaciones de Angular utilizando los paquetes que el ngrx nos ofrece ',
+  //   projects: this.projects,
+  //   author: {
+  //     _id: 1,
+  //     name: 'Fernando Herrera',
+  //     links: {
+  //       personal: 'https://fernando-herrera.com/#/',
+  //       udemy: 'https://www.udemy.com/user/550c38655ec11/',
+  //     },
+  //   },
+  //   techs: () => {
+  //     return {
+  //       frontend: {
+  //         framework: 'Angular',
+  //         language: 'TypeScript',
+  //         tag: 'HTML',
+  //         style: 'Scss',
+  //       },
+  //     };
+  //   },
+  // };
 
   //? Todos los cursos realizados o guardados por hacer
 
@@ -116,7 +119,7 @@ export class StorageService {
 
   //$ Constructor
   constructor() {
-    this.projects = this._initProjects;
+    // this.projects = this._initProjects;
     this.obsProjects = this._subjectProjects$.asObservable();
   }
 }

@@ -1,3 +1,5 @@
+
+//? Tecnologias usadas en cada proyecto o explicadas por cada autor
 export interface ITechs {
   frontend?: IFrontend;
   backend?: IBackend;
@@ -5,13 +7,13 @@ export interface ITechs {
 
 interface IBackend {
   framework?: TFrameworkBack | TFrameworkBack[];
-  language: TLanguageBack | TLanguageBack;
+  language: TLanguageBack | TLanguageBack[];
   libreries?: TLib | TLib[];
   methodology?: TMethodology | TMethodology[];
 }
 interface IFrontend {
   framework?: TFrameworkFront | TFrameworkFront[];
-  language: TLanguageFront | TLanguageFront;
+  language: TLanguageFront | TLanguageFront[];
   libreries?: TLib | TLib[];
   methodology?: TMethodology | TMethodology[];
   tag: TTag | TTag[];
@@ -41,7 +43,7 @@ export type TLanguageBack =
 export type TTag = 'HTML';
 export type TStyle = 'Css' | 'Scss' | 'Sass' | 'Less' | 'Bootstrap' | 'Tailwind';
 export type TLib =
-  | 'ExpressJS'
+  | 'ExpressJs'
   | 'Mongoose'
   | 'OpenZeppelin'
   | 'MomentJs'
